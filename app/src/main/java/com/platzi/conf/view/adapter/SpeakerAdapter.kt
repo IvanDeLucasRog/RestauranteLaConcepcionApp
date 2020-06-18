@@ -25,10 +25,11 @@ class SpeakerAdapter(val speakerListener: SpeakerListener) : RecyclerView.Adapte
         holder.tvSpeakerName.text = speaker.name
         holder.tvSpeakerWork.text = speaker.workplace
 
-        Glide.with(holder.itemView.context)
-            .load(speaker.image)
-            .apply(RequestOptions.circleCropTransform())
-            .into(holder.ivSpeakerImage)
+        //dependencia que nos permite descargar imagenes
+        Glide.with(holder.itemView.context) //contexto
+            .load(speaker.image) // donde esta la imagen
+            .apply(RequestOptions.circleCropTransform()) //atributo interno de glide para hacerlo circular
+            .into(holder.ivSpeakerImage) //dondecolocarla
 
         holder.itemView.setOnClickListener {
             speakerListener.onSpeakerClicked(speaker, position)

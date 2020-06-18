@@ -4,4 +4,5 @@ import com.platzi.conf.model.Conference
 
 interface ScheduleListener {
     fun onConferenceClicked(conference: Conference, position: Int)
+    // capturar el evento del click
 }

@@ -7,9 +7,9 @@ import com.platzi.conf.network.Callback
 import com.platzi.conf.network.FirestoreService
 import java.lang.Exception
 
-class ScheduleViewModel: ViewModel() {
-    val firestoreService = FirestoreService()
-    var listSchedule: MutableLiveData<List<Conference>> = MutableLiveData()
+class ScheduleViewModel: ViewModel() { // comunica toda la información
+    val firestoreService = FirestoreService() // instancia de la clase Firestore Service
+    var listSchedule: MutableLiveData<List<Conference>> = MutableLiveData() //añadir el LiveData
     var isLoading = MutableLiveData<Boolean>()
 
     fun refresh() {

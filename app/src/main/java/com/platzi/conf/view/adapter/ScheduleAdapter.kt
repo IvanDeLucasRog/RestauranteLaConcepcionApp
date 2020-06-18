@@ -13,19 +13,20 @@ import kotlin.collections.ArrayList
 
 class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
 
-    var listConference = ArrayList<Conference>()
+    var listConference = ArrayList<Conference>() //donde se van a almacenar gráficamente los elementos
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_schedule, parent, false))
-
+        // Diseño para nuestra lista. Asignamos el item que crearmos
     override fun getItemCount() = listConference.size
-
-    override fun onBindViewHolder(holder: ScheduleAdapter.ViewHolder, position: Int) {
-        val conference = listConference[position] as Conference
+        //Cuantos elementos tenemos
+    override fun onBindViewHolder(holder: ScheduleAdapter.ViewHolder, position: Int) { //Como podemos enlazar cada elemento
+        val conference = listConference[position] as Conference //situarnos en el item que estemos
 
         holder.tvConferenceName.text = conference.title
         holder.tvConferenceSpeaker.text = conference.speaker
         holder.tvConferenceTag.text = conference.tag
 
+            //parcear la hora
         val simpleDateformat = SimpleDateFormat("HH:mm")
         val simpleDateformatAMPM = SimpleDateFormat("a")
 
