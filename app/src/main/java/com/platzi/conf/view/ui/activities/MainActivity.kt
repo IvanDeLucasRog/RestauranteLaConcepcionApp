@@ -20,7 +20,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val jsonArr = JSONArray("[\n" +
+
+
+
+        /* val jsonArr = JSONArray("[\n" +
                 "            {\n" +
                 "                'biography' : 'Cesar Fajardo, creativo y content creator del equipo de Platzi, transforma las ideas en historias inspiradoras y contenidos innovadores que impactan al mundo para generar gracias, no solo likes, de nada sirve tu talento si no estas haciendo algo con el, de nada sirven tus habilidades si no tienes ideas para fusionarlas.',\n" +
                 "                'category' : 5,\n" +
@@ -301,19 +304,19 @@ class MainActivity : AppCompatActivity() {
 
         val firebaseFirestore = FirebaseFirestore.getInstance()
 
-        /*for (i in 0 until jsonArr.length()) {
-            //val aux = jsonArr.get(i) as JSONObject
-            //var speaker = Speaker()
-            //speaker.name = aux.getString("name")
-            //speaker.jobtitle = aux.getString("jobtitle")
-            //speaker.workplace = aux.getString("workplace")
-            //speaker.biography = aux.getString("biography")
-            //speaker.twitter = aux.getString("twitter")
-            //speaker.image = aux.getString("image")
-            //speaker.category = aux.getInt("category")
+        for (i in 0 until jsonArr.length()) {
+            val aux = jsonArr.get(i) as JSONObject
+            var speaker = Speaker()
+            speaker.name = aux.getString("name")
+            speaker.jobtitle = aux.getString("jobtitle")
+            speaker.workplace = aux.getString("workplace")
+            speaker.biography = aux.getString("biography")
+            speaker.twitter = aux.getString("twitter")
+            speaker.image = aux.getString("image")
+            speaker.category = aux.getInt("category")
 
-            //firebaseFirestore.collection("speakers").document().set(speaker)
-        }*/
+            firebaseFirestore.collection("speakers").document().set(speaker)
+        }
 
 
         for(i in 0 until jsonArr2.length()) {
@@ -328,7 +331,7 @@ class MainActivity : AppCompatActivity() {
             conference.speaker = aux.getString("speaker")
 
             firebaseFirestore.collection("conferences").document().set(conference)
-        }
+        }*/
 
     }
 
