@@ -18,11 +18,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setActionBar(findViewById(R.id.toolbarMain))//asignamos la toolbar ya que quitamos la default
+        configNav()
 
-
-
-
-
+//Region Subir datos Firebase
         /* val jsonArr = JSONArray("[\n" +
                 "            {\n" +
                 "                'biography' : 'Cesar Fajardo, creativo y content creator del equipo de Platzi, transforma las ideas en historias inspiradoras y contenidos innovadores que impactan al mundo para generar gracias, no solo likes, de nada sirve tu talento si no estas haciendo algo con el, de nada sirven tus habilidades si no tienes ideas para fusionarlas.',\n" +
@@ -332,7 +331,9 @@ class MainActivity : AppCompatActivity() {
 
             firebaseFirestore.collection("conferences").document().set(conference)
         }*/
-
+//endregion
     }
-
+    fun configNav(){
+        NavigationUI.setupWithNavController(bnvMenu, Navigation.findNavController(this, R.id.fragContent))
+    }
 }

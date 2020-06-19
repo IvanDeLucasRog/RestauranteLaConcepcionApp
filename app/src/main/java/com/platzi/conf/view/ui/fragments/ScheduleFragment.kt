@@ -22,10 +22,10 @@ import kotlinx.android.synthetic.main.fragment_schedule.*
 /**
  * A simple [Fragment] subclass.
  */
-class ScheduleFragment : Fragment(), ScheduleListener {
+class ScheduleFragment : Fragment(), ScheduleListener { //herencia con implementación
 
-    private lateinit var scheduleAdapter: ScheduleAdapter
-    private lateinit var viewModel: ScheduleViewModel
+    private lateinit var scheduleAdapter: ScheduleAdapter // acceso a firebase
+    private lateinit var viewModel: ScheduleViewModel //acceso a view model
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_schedule, container, false)
