@@ -30,7 +30,12 @@ class SpeakersDetailDialogFragment : DialogFragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_speakers_detail_dialog, container, false)
-        toolbarSpeaker.navigationIcon = ContextCompat.getDrawable(view!!.context, R.drawable.ic_close)
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        toolbarSpeaker.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
         toolbarSpeaker.setTitleTextColor(Color.WHITE)
         toolbarSpeaker.setNavigationOnClickListener {
             dismiss()
