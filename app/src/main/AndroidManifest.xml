@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBULrjADBRlbUrBr9UQHiBgfAB8AKEYOls" />
+            android:value="AIzaSyC_1X6Z48kmGUS7dP9YlbR-sd_PFLlBpC0" />
 
         <activity android:name="com.platzi.conf.view.ui.activities.SplashscreenActivity"></activity>
         <activity android:name=".view.ui.activities.MainActivity">
