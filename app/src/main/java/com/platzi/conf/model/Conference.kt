@@ -1,8 +1,9 @@
 package com.platzi.conf.model
 
+import java.io.Serializable
 import java.util.*
 
-class Conference {
+class Conference :Serializable { // para que el objeto pueda pasar entre activities
     lateinit var title: String
     lateinit var description: String
     lateinit var tag: String
