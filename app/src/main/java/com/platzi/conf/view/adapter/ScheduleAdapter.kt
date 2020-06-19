@@ -32,7 +32,7 @@ class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Ada
 
         val cal = Calendar.getInstance()
         cal.time = conference.datetime
-        val hourFormat = simpleDateformat.format(conference.datetime)
+        val hourFormat = simpleDateformat.format(cal) //cambios ya que no actualiza la hora
 
         holder.tvConferenceHour.text = hourFormat
         holder.tvConferenceAMPM.text = simpleDateformatAMPM.format(conference.datetime).toUpperCase()
