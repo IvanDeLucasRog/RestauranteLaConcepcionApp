@@ -20,20 +20,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">>
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/platzi_conf_2"
                         android:scaleType="centerCrop"/>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimary"
-                        android:alpha="0.5"/>
+                        android:alpha="0.5"
+                        android:background="@color/colorPrimary" />
+
                     <TextView
                         android:id="@+id/tvItemScheduleTituloConferencia"
                         android:layout_width="match_parent"
