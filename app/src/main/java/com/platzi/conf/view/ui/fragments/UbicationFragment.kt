@@ -45,13 +45,13 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         val centerMap = LatLng(ubication.latitude, ubication.longitude)
 
         googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(centerMap, zoom))
-/*
+
         val centerMark = LatLng(ubication.latitude, ubication.longitude)
         val markerOptions = MarkerOptions()
         markerOptions.position(centerMark)
         markerOptions.title("Platzi Conf 2019")
 
-        val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.ic_restaurantpin) } as BitmapDrawable
+        val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.pin) } as BitmapDrawable
         val smallMarker = Bitmap.createScaledBitmap(bitmapDraw.bitmap, 150, 150, false)
 
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
@@ -59,7 +59,7 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         googleMap?.addMarker(markerOptions)
         googleMap?.setOnMarkerClickListener(this)
 
-        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))*/
+        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))
 
 
     }
