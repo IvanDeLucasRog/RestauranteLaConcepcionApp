@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.ui.fragments.MapsFragment"
-        tools:layout="@layout/activity_main"/>
+        />
 
 </FrameLayout>

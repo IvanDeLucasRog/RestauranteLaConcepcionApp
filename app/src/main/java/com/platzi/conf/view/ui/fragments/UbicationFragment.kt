@@ -23,7 +23,11 @@ import com.platzi.conf.model.Ubication
  */
 class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_ubication, container, false)
     }
 
@@ -35,7 +39,7 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
-        val ubication = Ubication()
+        /*val ubication = Ubication()
 
         val zoom = 16f
         val centerMap = LatLng(ubication.latitude, ubication.longitude)
@@ -57,12 +61,12 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
 
         googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))
 
-
+*/
     }
 
-    override fun onMarkerClick(p0: Marker?): Boolean {
-        findNavController().navigate(R.id.ubicationDetailFragmentDialog)
-        return true
+        override fun onMarkerClick(p0: Marker?): Boolean {
+            //findNavController().navigate(R.id.ubicationDetailFragmentDialog)
+            return true
+        }
     }
 
-}
