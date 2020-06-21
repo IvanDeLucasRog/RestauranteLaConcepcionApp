@@ -39,13 +39,13 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
-        /*val ubication = Ubication()
+        val ubication = Ubication()
 
         val zoom = 16f
         val centerMap = LatLng(ubication.latitude, ubication.longitude)
 
         googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(centerMap, zoom))
-
+/*
         val centerMark = LatLng(ubication.latitude, ubication.longitude)
         val markerOptions = MarkerOptions()
         markerOptions.position(centerMark)
@@ -59,13 +59,13 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         googleMap?.addMarker(markerOptions)
         googleMap?.setOnMarkerClickListener(this)
 
-        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))
+        googleMap?.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.custom_map))*/
 
-*/
+
     }
 
         override fun onMarkerClick(p0: Marker?): Boolean {
-            //findNavController().navigate(R.id.ubicationDetailFragmentDialog)
+            findNavController().navigate(R.id.ubicationDetailFragmentDialog)
             return true
         }
     }
