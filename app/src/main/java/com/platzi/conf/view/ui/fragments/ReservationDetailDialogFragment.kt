@@ -11,14 +11,12 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 
 import com.platzi.conf.R
-import com.platzi.conf.model.Conference
-import kotlinx.android.synthetic.main.fragment_schedule_detail_dialog.*
-import java.text.SimpleDateFormat
+import kotlinx.android.synthetic.main.fragment_reservation_detail_dialog.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class ScheduleDetailDialogFragment : DialogFragment() {
+class ReservationDetailDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,27 +28,25 @@ class ScheduleDetailDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_detail_dialog, container, false)
+        return inflater.inflate(R.layout.fragment_reservation_detail_dialog, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbarConference.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
-        toolbarConference.setTitleTextColor(Color.WHITE)
-        toolbarConference.setNavigationOnClickListener {
+        toolbarSpeaker.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
+        toolbarSpeaker.setTitleTextColor(Color.WHITE)
+        toolbarSpeaker.setNavigationOnClickListener {
             dismiss()
         }
-        val conference = arguments?.getSerializable("conference") as Conference
-        toolbarConference.title = conference.title
-        tvItemScheduleTituloConferencia.text = conference.title
+        val speaker = arguments?.getSerializable("speaker") as Speaker
+        toolbarSpeaker.title = speaker.name
+        tvDetailSpeakerName.text = speaker.name
 
-        val pattern ="dd/MM/yyyy hh:mm a"
-        val simpleDF = SimpleDateFormat(pattern)
-        val date = simpleDF.format(conference.datetime)
-        tvDetailConferenceHour.text = date
-        tvDetailConferenceSpeaker.text = conference.speaker
-        tvDetailConferenceTag.text = conference.tag
-        tvDetailConferenceDescription.text = conference.description
+        tvDetailSpeakerJobtitle.text = speaker.jobtitle
+        tvDetailSpeakerWorkplace.text = speaker.workplace
+        //ivDetailSpeakerTwitter
+        tvDetailSpeakerBiography.text = speaker.biography
     }
 
     override fun onStart() {
@@ -58,3 +54,5 @@ class ScheduleDetailDialogFragment : DialogFragment() {
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
 }
+
+

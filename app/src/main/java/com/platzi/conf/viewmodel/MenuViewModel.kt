@@ -2,14 +2,14 @@ package com.platzi.conf.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.platzi.conf.model.Conference
+import com.platzi.conf.model.Menu
 import com.platzi.conf.network.Callback
 import com.platzi.conf.network.FirestoreService
 import java.lang.Exception
 
-class ScheduleViewModel: ViewModel() { // comunica toda la información
+class MenuViewModel: ViewModel() { // comunica toda la información
     val firestoreService = FirestoreService() // instancia de la clase Firestore Service
-    var listSchedule: MutableLiveData<List<Conference>> = MutableLiveData() //añadir el LiveData
+    var listSchedule: MutableLiveData<List<Menu>> = MutableLiveData() //añadir el LiveData
     var isLoading = MutableLiveData<Boolean>()
 
     fun refresh() {
@@ -17,8 +17,8 @@ class ScheduleViewModel: ViewModel() { // comunica toda la información
     }
 
     fun getScheduleFromFirebase() {
-        firestoreService.getSchedule(object: Callback<List<Conference>> {
-            override fun onSuccess(result: List<Conference>?) {
+        firestoreService.getSchedule(object: Callback<List<Menu>> {
+            override fun onSuccess(result: List<Menu>?) {
                 listSchedule.postValue(result)
                 processFinished()
             }

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.platzi.conf.model.Conference
+import com.platzi.conf.model.Menu
 import com.platzi.conf.R
 import java.text.SimpleDateFormat
 import java.util.*
@@ -13,14 +13,14 @@ import kotlin.collections.ArrayList
 
 class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
 
-    var listConference = ArrayList<Conference>() //donde se van a almacenar gráficamente los elementos
+    var listConference = ArrayList<Menu>() //donde se van a almacenar gráficamente los elementos
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_schedule, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_menu, parent, false))
         // Diseño para nuestra lista. Asignamos el item que crearmos
     override fun getItemCount() = listConference.size
         //Cuantos elementos tenemos
     override fun onBindViewHolder(holder: ScheduleAdapter.ViewHolder, position: Int) { //Como podemos enlazar cada elemento
-        val conference = listConference[position] as Conference //situarnos en el item que estemos
+        val conference = listConference[position] as Menu //situarnos en el item que estemos
 
         holder.tvConferenceName.text = conference.title
         holder.tvConferenceSpeaker.text = conference.speaker
@@ -43,7 +43,7 @@ class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Ada
 
     }
 
-    fun updateData(data: List<Conference>) {
+    fun updateData(data: List<Menu>) {
         listConference.clear()
         listConference.addAll(data)
         notifyDataSetChanged()

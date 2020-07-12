@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/navScheduleFragment"
-        android:name="com.platzi.conf.view.ui.fragments.ScheduleFragment"
+        android:name="com.platzi.conf.view.ui.fragments.MenuFragment"
         android:label="fragment_schedule"
-        tools:layout="@layout/fragment_schedule" >
+        tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_scheduleFragment_to_speakersFragment"
             app:destination="@id/navSpeakersFragment" />
@@ -28,9 +28,9 @@
     </fragment>
     <fragment
         android:id="@+id/navSpeakersFragment"
-        android:name="com.platzi.conf.view.ui.fragments.SpeakersFragment"
+        android:name="com.platzi.conf.view.ui.fragments.ReservationFragment"
         android:label="fragment_speakers"
-        tools:layout="@layout/fragment_speakers" >
+        tools:layout="@layout/fragment_reservation" >
         <action
             android:id="@+id/action_speakersFragment_to_ubicationFragment"
             app:destination="@id/navMapFragment" />
@@ -50,15 +50,15 @@
 
     <dialog
         android:id="@+id/speakersDetailFragmentDialog"
-        android:name="com.platzi.conf.view.ui.fragments.SpeakersDetailDialogFragment"
+        android:name="com.platzi.conf.view.ui.fragments.ReservationDetailDialogFragment"
         android:label="SpeakerDetailFragmentDialog"
-        tools:layout="@layout/fragment_speakers_detail_dialog"/>
+        tools:layout="@layout/fragment_reservation_detail_dialog"/>
 
     <dialog
         android:id="@+id/scheduleDetailFragmentDialog"
-        android:name="com.platzi.conf.view.ui.fragments.ScheduleDetailDialogFragment"
+        android:name="com.platzi.conf.view.ui.fragments.MenuDetailDialogFragment"
         android:label="ScheduleDetailFragmentDialog"
-        tools:layout="@layout/fragment_schedule_detail_dialog"/>
+        tools:layout="@layout/fragment_menu_detail_dialog"/>
     <dialog
         android:id="@+id/ubicationDetailFragmentDialog"
         android:name="com.platzi.conf.view.ui.fragments.UbicationDetailDialogFragment"

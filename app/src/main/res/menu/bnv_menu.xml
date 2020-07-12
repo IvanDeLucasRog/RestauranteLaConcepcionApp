@@ -6,14 +6,14 @@
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/navScheduleFragment"
-        android:title="Cronograma"
-        android:icon="@drawable/ic_schedule" />
+        android:title="Menú"
+        android:icon="@drawable/ic_restaurant" />
     <item
         android:id="@+id/navSpeakersFragment"
-        android:title="Expositores"
-        android:icon="@drawable/ic_speakers" />
+        android:title="Reservas"
+        android:icon="@drawable/ic_form" />
     <item
         android:id="@+id/navMapFragment"
-        android:title="Mapa"
+        android:title="Encuéntranos"
         android:icon="@drawable/ic_map" />
 </menu>

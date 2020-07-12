@@ -11,13 +11,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 
 import com.platzi.conf.R
-import com.platzi.conf.model.Speaker
-import kotlinx.android.synthetic.main.fragment_speakers_detail_dialog.*
+import com.platzi.conf.model.Menu
+import kotlinx.android.synthetic.main.fragment_menu_detail_dialog.*
+import java.text.SimpleDateFormat
 
 /**
  * A simple [Fragment] subclass.
  */
-class SpeakersDetailDialogFragment : DialogFragment() {
+class MenuDetailDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,25 +30,27 @@ class SpeakersDetailDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_speakers_detail_dialog, container, false)
-
+        return inflater.inflate(R.layout.fragment_menu_detail_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbarSpeaker.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
-        toolbarSpeaker.setTitleTextColor(Color.WHITE)
-        toolbarSpeaker.setNavigationOnClickListener {
+        toolbarConference.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
+        toolbarConference.setTitleTextColor(Color.WHITE)
+        toolbarConference.setNavigationOnClickListener {
             dismiss()
         }
-        val speaker = arguments?.getSerializable("speaker") as Speaker
-        toolbarSpeaker.title = speaker.name
-        tvDetailSpeakerName.text = speaker.name
+        val conference = arguments?.getSerializable("conference") as Menu
+        toolbarConference.title = conference.title
+        tvItemScheduleTituloConferencia.text = conference.title
 
-        tvDetailSpeakerJobtitle.text = speaker.jobtitle
-        tvDetailSpeakerWorkplace.text = speaker.workplace
-        //ivDetailSpeakerTwitter
-        tvDetailSpeakerBiography.text = speaker.biography
+        val pattern ="dd/MM/yyyy hh:mm a"
+        val simpleDF = SimpleDateFormat(pattern)
+        val date = simpleDF.format(conference.datetime)
+        tvDetailConferenceHour.text = date
+        tvDetailConferenceSpeaker.text = conference.speaker
+        tvDetailConferenceTag.text = conference.tag
+        tvDetailConferenceDescription.text = conference.description
     }
 
     override fun onStart() {
@@ -55,5 +58,3 @@ class SpeakersDetailDialogFragment : DialogFragment() {
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
 }
-
-

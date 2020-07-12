@@ -15,32 +15,28 @@ import androidx.recyclerview.widget.GridLayoutManager
 
 import com.platzi.conf.R
 
-import com.platzi.conf.model.Speaker
-
-import com.platzi.conf.view.adapter.SpeakerAdapter
-import com.platzi.conf.view.adapter.SpeakerListener
-import com.platzi.conf.viewmodel.SpeakersViewModel
-import kotlinx.android.synthetic.main.fragment_speakers.*
+import com.platzi.conf.viewmodel.ReservationViewModel
+import kotlinx.android.synthetic.main.fragment_reservation.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class SpeakersFragment : Fragment(), SpeakerListener {
+class ReservationFragment : Fragment(), SpeakerListener {
 
     private lateinit var speakerAdapter: SpeakerAdapter // acceso a firebase
-    private lateinit var viewModel: SpeakersViewModel //acceso a view model
+    private lateinit var viewModel: ReservationViewModel //acceso a view model
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_speakers, container, false)
+        return inflater.inflate(R.layout.fragment_reservation, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this).get(SpeakersViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(ReservationViewModel::class.java)
         viewModel.refresh()
 
         speakerAdapter = SpeakerAdapter(this)

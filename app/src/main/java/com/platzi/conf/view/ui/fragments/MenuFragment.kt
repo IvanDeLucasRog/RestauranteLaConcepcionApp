@@ -7,34 +7,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.platzi.conf.R
-import com.platzi.conf.model.Conference
+import com.platzi.conf.model.Menu
 import com.platzi.conf.view.adapter.ScheduleAdapter
 import com.platzi.conf.view.adapter.ScheduleListener
-import com.platzi.conf.viewmodel.ScheduleViewModel
-import kotlinx.android.synthetic.main.fragment_schedule.*
+import com.platzi.conf.viewmodel.MenuViewModel
+import kotlinx.android.synthetic.main.fragment_menu.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class ScheduleFragment : Fragment(), ScheduleListener { //herencia con implementación
+class MenuFragment : Fragment(), ScheduleListener { //herencia con implementación
 
     private lateinit var scheduleAdapter: ScheduleAdapter // acceso a firebase
-    private lateinit var viewModel: ScheduleViewModel //acceso a view model
+    private lateinit var viewModel: MenuViewModel //acceso a view model
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
+        return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(MenuViewModel::class.java)
         viewModel.refresh()
 
         scheduleAdapter = ScheduleAdapter(this)
@@ -47,7 +46,7 @@ class ScheduleFragment : Fragment(), ScheduleListener { //herencia con implement
     }
 
     fun observeViewModel() {
-        viewModel.listSchedule.observe(this, Observer<List<Conference>> { schedule ->
+        viewModel.listSchedule.observe(this, Observer<List<Menu>> { schedule ->
             scheduleAdapter.updateData(schedule)
         })
 
@@ -57,8 +56,8 @@ class ScheduleFragment : Fragment(), ScheduleListener { //herencia con implement
         })
     }
 
-    override fun onConferenceClicked(conference: Conference, position: Int) {
-        val bundle = bundleOf("conference" to conference)
+    override fun onConferenceClicked(menu: Menu, position: Int) {
+        val bundle = bundleOf("conference" to menu)
         findNavController().navigate(R.id.scheduleDetailFragmentDialog, bundle)
     }
 

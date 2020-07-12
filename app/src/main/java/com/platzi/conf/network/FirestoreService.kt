@@ -2,8 +2,7 @@ package com.platzi.conf.network
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
-import com.platzi.conf.model.Conference
-import com.platzi.conf.model.Speaker
+import com.platzi.conf.model.Menu
 
 const val CONFERENCES_COLLECTION_NAME = "conferences"
 const val SPEAKERS_COLLECTION_NAME = "speakers"
@@ -29,12 +28,12 @@ class FirestoreService {
             }
     }
 
-    fun getSchedule(callback: Callback<List<Conference>>) {
+    fun getSchedule(callback: Callback<List<Menu>>) {
         firebaseFirestore.collection(CONFERENCES_COLLECTION_NAME)
             .get()
             .addOnSuccessListener { result ->
                 for (doc in result) {
-                    val list = result.toObjects(Conference::class.java)
+                    val list = result.toObjects(Menu::class.java)
                     callback.onSuccess(list)
                     break
                 }

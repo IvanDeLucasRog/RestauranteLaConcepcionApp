@@ -2,11 +2,10 @@ package com.platzi.conf.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.platzi.conf.model.Speaker
 import com.platzi.conf.network.Callback
 import com.platzi.conf.network.FirestoreService
 
-class SpeakersViewModel : ViewModel() {
+class ReservationViewModel : ViewModel() {
     val firestoreService = FirestoreService()
     var listSpeakers : MutableLiveData<List<Speaker>> = MutableLiveData()
     var isLoading = MutableLiveData<Boolean>()

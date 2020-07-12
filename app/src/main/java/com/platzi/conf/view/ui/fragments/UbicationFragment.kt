@@ -51,7 +51,7 @@ class UbicationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClic
         markerOptions.position(centerMark)
         markerOptions.title("Platzi Conf 2019")
 
-        val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.pin) } as BitmapDrawable
+        val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.logo_platzi_conf) } as BitmapDrawable
         val smallMarker = Bitmap.createScaledBitmap(bitmapDraw.bitmap, 150, 150, false)
 
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
