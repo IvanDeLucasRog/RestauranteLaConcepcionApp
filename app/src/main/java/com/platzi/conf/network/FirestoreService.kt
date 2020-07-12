@@ -15,7 +15,7 @@ class FirestoreService {
         firebaseFirestore.firestoreSettings = settings // asignamos los datos ofline a la instancia de la base de datos al llamar a la clase
     }
 
-    fun getSpeakers(callback: Callback<List<Speaker>>) {
+    /*fun getSpeakers(callback: Callback<List<Speaker>>) {
         firebaseFirestore.collection(SPEAKERS_COLLECTION_NAME) //llamamos a la colección de conferencias con variables constantes. Valdría con poner "conferences"
             .orderBy("category") // ordenar los datos en funcion de la categoría
             .get()
@@ -26,7 +26,7 @@ class FirestoreService {
                     break
                 }
             }
-    }
+    }*/
 
     fun getSchedule(callback: Callback<List<Menu>>) {
         firebaseFirestore.collection(CONFERENCES_COLLECTION_NAME)

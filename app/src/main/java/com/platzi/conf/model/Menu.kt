@@ -5,8 +5,7 @@ import java.util.*
 
 class Menu :Serializable { // para que el objeto pueda pasar entre activities
     lateinit var title: String
-    lateinit var description: String
+    var price: Double = 0.0
     lateinit var tag: String
-    lateinit var datetime: Date
-    lateinit var speaker: String
+    lateinit var plate: String
 }

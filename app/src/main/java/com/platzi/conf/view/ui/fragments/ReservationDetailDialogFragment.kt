@@ -39,14 +39,14 @@ class ReservationDetailDialogFragment : DialogFragment() {
         toolbarSpeaker.setNavigationOnClickListener {
             dismiss()
         }
-        val speaker = arguments?.getSerializable("speaker") as Speaker
+        /*val speaker = arguments?.getSerializable("speaker") as Speaker
         toolbarSpeaker.title = speaker.name
         tvDetailSpeakerName.text = speaker.name
 
         tvDetailSpeakerJobtitle.text = speaker.jobtitle
         tvDetailSpeakerWorkplace.text = speaker.workplace
         //ivDetailSpeakerTwitter
-        tvDetailSpeakerBiography.text = speaker.biography
+        tvDetailSpeakerBiography.text = speaker.biography*/
     }
 
     override fun onStart() {

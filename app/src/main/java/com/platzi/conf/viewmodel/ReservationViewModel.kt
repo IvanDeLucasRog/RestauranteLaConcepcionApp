@@ -7,7 +7,7 @@ import com.platzi.conf.network.FirestoreService
 
 class ReservationViewModel : ViewModel() {
     val firestoreService = FirestoreService()
-    var listSpeakers : MutableLiveData<List<Speaker>> = MutableLiveData()
+    /*var listSpeakers : MutableLiveData<List<Speaker>> = MutableLiveData()
     var isLoading = MutableLiveData<Boolean>()
 
 
@@ -30,6 +30,6 @@ class ReservationViewModel : ViewModel() {
 
     private fun processFinished() {
         isLoading.value = true
-    }
+    }*/
 
 }

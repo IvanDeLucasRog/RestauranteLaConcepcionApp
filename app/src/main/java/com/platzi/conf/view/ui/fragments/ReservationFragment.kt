@@ -21,9 +21,9 @@ import kotlinx.android.synthetic.main.fragment_reservation.*
 /**
  * A simple [Fragment] subclass.
  */
-class ReservationFragment : Fragment(), SpeakerListener {
+class ReservationFragment : Fragment(){
 
-    private lateinit var speakerAdapter: SpeakerAdapter // acceso a firebase
+    //private lateinit var speakerAdapter: SpeakerAdapter // acceso a firebase
     private lateinit var viewModel: ReservationViewModel //acceso a view model
 
     override fun onCreateView(
@@ -37,18 +37,18 @@ class ReservationFragment : Fragment(), SpeakerListener {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(ReservationViewModel::class.java)
-        viewModel.refresh()
+        /*viewModel.refresh()*/
 
-        speakerAdapter = SpeakerAdapter(this)
+        //speakerAdapter = SpeakerAdapter(this)
 
         rvSpeakers.apply {
             layoutManager = GridLayoutManager(context, 2) //ponerlo en cuadraditos
-            adapter = speakerAdapter
+            //adapter = speakerAdapter
         }
-        observeViewModel()
+        //observeViewModel()
     }
 
-    fun observeViewModel() {
+   /* fun observeViewModel() {
         viewModel.listSpeakers.observe(this, Observer<List<Speaker>> { speaker ->
             speaker.let{
                 speakerAdapter.updateData(speaker)
@@ -65,7 +65,7 @@ class ReservationFragment : Fragment(), SpeakerListener {
     override fun onSpeakerClicked(speaker: Speaker, position: Int) {
         val bundle = bundleOf("speaker" to speaker)
         findNavController().navigate(R.id.speakersDetailFragmentDialog, bundle)
-    }
+    }*/
 
 }
 

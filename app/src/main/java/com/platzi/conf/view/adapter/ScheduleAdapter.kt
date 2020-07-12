@@ -23,7 +23,7 @@ class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Ada
         val conference = listConference[position] as Menu //situarnos en el item que estemos
 
         holder.tvConferenceName.text = conference.title
-        holder.tvConferenceSpeaker.text = conference.speaker
+        //holder.tvConferenceSpeaker.text = conference.speaker
         holder.tvConferenceTag.text = conference.tag
 
             //parcear la hora
@@ -31,11 +31,11 @@ class ScheduleAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Ada
         val simpleDateformatAMPM = SimpleDateFormat("a")
 
         val cal = Calendar.getInstance()
-        cal.time = conference.datetime
-        val hourFormat = simpleDateformat.format(conference.datetime) //cambios ya que no actualiza la hora
+        //cal.time = conference.datetime
+        //val hourFormat = simpleDateformat.format(conference.datetime) //cambios ya que no actualiza la hora
 
-        holder.tvConferenceHour.text = hourFormat
-        holder.tvConferenceAMPM.text = simpleDateformatAMPM.format(conference.datetime).toUpperCase()
+        //holder.tvConferenceHour.text = hourFormat
+        //holder.tvConferenceAMPM.text = simpleDateformatAMPM.format(conference.datetime).toUpperCase()
 
         holder.itemView.setOnClickListener {
             scheduleListener.onConferenceClicked(conference, position)

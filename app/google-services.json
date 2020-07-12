@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "244046237750",
-    "firebase_url": "https://platzi-conf-a5481.firebaseio.com",
-    "project_id": "platzi-conf-a5481",
-    "storage_bucket": "platzi-conf-a5481.appspot.com"
+    "project_number": "885489931849",
+    "firebase_url": "https://restaurante-la-concepcion.firebaseio.com",
+    "project_id": "restaurante-la-concepcion",
+    "storage_bucket": "restaurante-la-concepcion.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244046237750:android:924646eea45fae6f6e4897",
+        "mobilesdk_app_id": "1:885489931849:android:a0e39a113aaa0e05db5198",
         "android_client_info": {
-          "package_name": "com.platzi.conf"
+          "package_name": "com.idlrapp.restaurantelaconcepcion"
         }
       },
       "oauth_client": [
         {
-          "client_id": "244046237750-klngr6pauborgqcjli1jqdeiu4n3iufh.apps.googleusercontent.com",
+          "client_id": "885489931849-gn4lr042t0ajpuuthv1dgld5ol7b277m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.platzi.conf",
-            "certificate_hash": "20042d1a8bbe2cf78c9bc35f4fabb6a41033251d"
+            "package_name": "com.idlrapp.restaurantelaconcepcion",
+            "certificate_hash": "732869bb09daf97c1cb861282addae44ca13e136"
           }
         },
         {
-          "client_id": "244046237750-r2evd5ues7hsc8n87dmm5cibsjgn6pto.apps.googleusercontent.com",
+          "client_id": "885489931849-7b8rmo5i7oqdpji3kav863pedd87cnc9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB6NX8vdDDpGpHyMBSNbSIEY-kdnRHKzE4"
+          "current_key": "AIzaSyDboun--0W2TU1OeG1NqB68oeqL1VS_YAU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "244046237750-r2evd5ues7hsc8n87dmm5cibsjgn6pto.apps.googleusercontent.com",
+              "client_id": "885489931849-7b8rmo5i7oqdpji3kav863pedd87cnc9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

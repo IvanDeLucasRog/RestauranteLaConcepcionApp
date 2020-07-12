@@ -46,11 +46,11 @@ class MenuDetailDialogFragment : DialogFragment() {
 
         val pattern ="dd/MM/yyyy hh:mm a"
         val simpleDF = SimpleDateFormat(pattern)
-        val date = simpleDF.format(conference.datetime)
-        tvDetailConferenceHour.text = date
-        tvDetailConferenceSpeaker.text = conference.speaker
+        //val date = simpleDF.format(conference.datetime)
+        //tvDetailConferenceHour.text = date
+        //tvDetailConferenceSpeaker.text = conference.speaker
         tvDetailConferenceTag.text = conference.tag
-        tvDetailConferenceDescription.text = conference.description
+        //tvDetailConferenceDescription.text = conference.description
     }
 
     override fun onStart() {
