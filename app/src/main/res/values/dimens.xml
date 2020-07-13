@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="altoLogoPlatzi">45dp</dimen>
-    <dimen name="toolbarAlto">30dp</dimen>
+    <dimen name="altoLogoPlatzi">48dp</dimen>
+    <dimen name="toolbarAlto">60dp</dimen>
     <dimen name="cardCornerRadius">4dp</dimen>
     <dimen name="altoImageViewHome">150dp</dimen>
 
@@ -9,6 +9,7 @@
     <dimen name="marginHomeSubtitulo">10dp</dimen>
     <dimen name="tamanioSubtitulo">15sp</dimen>
 
-    <dimen name="itemScheduleTitulo">30sp</dimen>
-    <dimen name="itemScheduleSubTitulo">20sp</dimen>
+    <dimen name="itemScheduleTitulo">45sp</dimen>
+    <dimen name="itemMenuTitulomargin">3dp</dimen>
+    <dimen name="itemMenuHeight">80dp</dimen>
 </resources>

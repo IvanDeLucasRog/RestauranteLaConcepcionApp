@@ -13,17 +13,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.platzi.conf.R
 import com.platzi.conf.model.Menu
-import com.platzi.conf.view.adapter.ScheduleAdapter
-import com.platzi.conf.view.adapter.ScheduleListener
+import com.platzi.conf.view.adapter.MenuAdapter
+import com.platzi.conf.view.adapter.MenuListener
 import com.platzi.conf.viewmodel.MenuViewModel
 import kotlinx.android.synthetic.main.fragment_menu.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class MenuFragment : Fragment(), ScheduleListener { //herencia con implementación
+class MenuFragment : Fragment(), MenuListener { //herencia con implementación
 
-    private lateinit var scheduleAdapter: ScheduleAdapter // acceso a firebase
+    private lateinit var menuAdapter: MenuAdapter // acceso a firebase
     private lateinit var viewModel: MenuViewModel //acceso a view model
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,28 +36,28 @@ class MenuFragment : Fragment(), ScheduleListener { //herencia con implementaci�
         viewModel = ViewModelProviders.of(this).get(MenuViewModel::class.java)
         viewModel.refresh()
 
-        scheduleAdapter = ScheduleAdapter(this)
+        menuAdapter = MenuAdapter(this)
 
         rvSchedule.apply {
             layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
-            adapter = scheduleAdapter
+            adapter = menuAdapter
         }
         observeViewModel()
     }
 
     fun observeViewModel() {
-        viewModel.listSchedule.observe(this, Observer<List<Menu>> { schedule ->
-            scheduleAdapter.updateData(schedule)
+        viewModel.listMenu.observe(viewLifecycleOwner, Observer<List<Menu>> { schedule ->
+            menuAdapter.updateData(schedule)
         })
 
-        viewModel.isLoading.observe(this, Observer<Boolean> {
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
             if(it != null)
                 rlBaseSchedule.visibility = View.INVISIBLE
         })
     }
 
-    override fun onConferenceClicked(menu: Menu, position: Int) {
-        val bundle = bundleOf("conference" to menu)
+    override fun onMenuClicked(menu: Menu, position: Int) {
+        val bundle = bundleOf("menu" to menu)
         findNavController().navigate(R.id.scheduleDetailFragmentDialog, bundle)
     }
 

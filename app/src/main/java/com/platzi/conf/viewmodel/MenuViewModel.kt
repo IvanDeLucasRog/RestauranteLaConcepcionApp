@@ -9,17 +9,17 @@ import java.lang.Exception
 
 class MenuViewModel: ViewModel() { // comunica toda la información
     val firestoreService = FirestoreService() // instancia de la clase Firestore Service
-    var listSchedule: MutableLiveData<List<Menu>> = MutableLiveData() //añadir el LiveData
+    var listMenu: MutableLiveData<List<Menu>> = MutableLiveData() //añadir el LiveData
     var isLoading = MutableLiveData<Boolean>()
 
     fun refresh() {
-        getScheduleFromFirebase()
+        getMenuFromFirebase()
     }
 
-    fun getScheduleFromFirebase() {
-        firestoreService.getSchedule(object: Callback<List<Menu>> {
+    fun getMenuFromFirebase() {
+        firestoreService.getMenu(object: Callback<List<Menu>> {
             override fun onSuccess(result: List<Menu>?) {
-                listSchedule.postValue(result)
+                listMenu.postValue(result)
                 processFinished()
             }
 

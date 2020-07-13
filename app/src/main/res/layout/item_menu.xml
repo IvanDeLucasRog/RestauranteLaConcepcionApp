@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/itemMenuHeight"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,62 +13,46 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="3dp">
 
-            <TextView
-                android:id="@+id/tvItemScheduleHour"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:gravity="right|bottom"
-                android:textSize="@dimen/itemScheduleTitulo"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/tvItemScheduleAMPM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="A.M."
-                android:gravity="right|top"
-                android:textSize="@dimen/itemScheduleSubTitulo"
-                android:textColor="@color/colorPrimary" />
+                android:layout_height="@dimen/itemMenuHeight"
+                android:id="@+id/ivItemMenuIcon"
+                android:src="@mipmap/ic_launcher" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/itemMenuHeight"
             android:layout_weight="3"
             android:orientation="vertical"
             android:layout_marginLeft="10dp">
             <TextView
-                android:id="@+id/tvItemScheduleConferenceName"
+                android:id="@+id/tvItemMenuPlatesName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre de la conferencia"
-                android:textSize="20sp"
+                android:text="Nombre del grupo de platos"
+                android:textSize="25sp"
                 android:textColor="@color/colorPrimary"
                 android:ellipsize="end"
-                android:lines="1"/>
+                android:lines="1"
+                android:layout_margin="@dimen/itemMenuTitulomargin"/>
+
             <TextView
-                android:id="@+id/tvItemScheduleConferenceSpeaker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Speaker name"
-                android:textSize="15sp"
-                android:textColor="@color/colorPrimary"
-                android:ellipsize="end"
-                android:lines="1"/>
-            <TextView
-                android:id="@+id/tvItemScheduleTag"
+                android:id="@+id/tvItemMenuTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tag"
                 android:ellipsize="end"
                 android:lines="1"
                 android:textColor="#FFFFFF"
-                android:background="@drawable/shape_topico"/>
+                android:background="@drawable/shape_topico"
+                android:layout_margin="@dimen/itemMenuTitulomargin"/>
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

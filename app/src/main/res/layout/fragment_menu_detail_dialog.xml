@@ -16,7 +16,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
         >
         >
@@ -35,6 +35,7 @@
                     android:layout_height="200dp">
 
                     <ImageView
+                        android:id="@+id/ivDetailMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
@@ -47,7 +48,7 @@
                         android:background="@color/colorPrimary" />
 
                     <TextView
-                        android:id="@+id/tvItemScheduleTituloConferencia"
+                        android:id="@+id/tvDetailMenuTitulo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -58,61 +59,23 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tvDetailConferenceTag"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    app:cardCornerRadius="4dp"
-                    app:cardElevation="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvDetailConferenceHour"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:gravity="center_horizontal"
-                            android:text="00:00"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:id="@+id/tvDetailConferenceSpeaker"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:gravity="center_horizontal"
-                            android:text="Nombre Expositor"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvDetailConferenceTag"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:gravity="center_horizontal"
-                            android:text="Tag"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:id="@+id/tvDetailConferenceDescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:gravity="center_horizontal"
-                            android:text="Detalle de la conferencia"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Tag"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:background="@drawable/shape_topico"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDetailMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

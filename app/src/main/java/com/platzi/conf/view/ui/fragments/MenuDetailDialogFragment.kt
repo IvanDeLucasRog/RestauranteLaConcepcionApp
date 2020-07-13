@@ -40,17 +40,11 @@ class MenuDetailDialogFragment : DialogFragment() {
         toolbarConference.setNavigationOnClickListener {
             dismiss()
         }
-        val conference = arguments?.getSerializable("conference") as Menu
+        val menu = arguments?.getSerializable("menu") as Menu
         toolbarConference.title = conference.title
         tvItemScheduleTituloConferencia.text = conference.title
 
-        val pattern ="dd/MM/yyyy hh:mm a"
-        val simpleDF = SimpleDateFormat(pattern)
-        //val date = simpleDF.format(conference.datetime)
-        //tvDetailConferenceHour.text = date
-        //tvDetailConferenceSpeaker.text = conference.speaker
-        tvDetailConferenceTag.text = conference.tag
-        //tvDetailConferenceDescription.text = conference.description
+
     }
 
     override fun onStart() {

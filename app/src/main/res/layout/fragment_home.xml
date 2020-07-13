@@ -18,7 +18,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="@dimen/toolbarAlto"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 app:cardCornerRadius="@dimen/cardCornerRadius"
                 app:cardElevation="4dp">
 
@@ -79,11 +82,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_parrafo"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/altoImageViewHome"
-                        android:src="@drawable/nuestra_barra"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nuestra_barra" />
 
                     <View
                         android:layout_width="match_parent"
@@ -100,6 +104,7 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/tamanioTitulo"
                         android:textStyle="bold" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -117,58 +122,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="@dimen/cardCornerRadius"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/shape_parrafo"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/altoImageViewHome"
-                        android:src="@drawable/platzi_conf_3" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/marginHomeSubtitulo"
-                        android:layout_marginTop="@dimen/marginHomeSubtitulo"
-                        android:layout_marginRight="@dimen/marginHomeSubtitulo"
-                        android:text="@string/inicio_frag_tv_info"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/tamanioTitulo"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/marginHomeSubtitulo"
-                        android:layout_marginTop="@dimen/marginHomeSubtitulo"
-                        android:layout_marginRight="@dimen/marginHomeSubtitulo"
-                        android:text="@string/inicio_frag_tv_info_resp"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/tamanioSubtitulo" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>
