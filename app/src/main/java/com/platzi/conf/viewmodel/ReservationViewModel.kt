@@ -1,8 +1,6 @@
 package com.platzi.conf.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.platzi.conf.network.Callback
 import com.platzi.conf.network.FirestoreService
 
 class ReservationViewModel : ViewModel() {

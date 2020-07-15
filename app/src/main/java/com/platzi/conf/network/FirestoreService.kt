@@ -6,8 +6,6 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.platzi.conf.PlateClickedSingleton
 import com.platzi.conf.model.Menu
 import com.platzi.conf.model.Plates
-import com.platzi.conf.view.adapter.MenuAdapter
-import com.platzi.conf.view.ui.fragments.MenuFragment
 
 const val MENU_COLLECTION_NAME = "menu"
 const val PLATES_SUBCOLLECTION_NAME = "platos"

@@ -14,7 +14,6 @@ import androidx.fragment.app.DialogFragment
 
 import com.platzi.conf.R
 import com.platzi.conf.model.Ubication
-import kotlinx.android.synthetic.main.fragment_menu_detail_dialog.*
 import kotlinx.android.synthetic.main.fragment_ubication_detail_dialog.*
 
 /**

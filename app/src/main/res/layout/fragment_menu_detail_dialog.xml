@@ -11,7 +11,8 @@
         <Toolbar
             android:id="@+id/toolbarConference"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout

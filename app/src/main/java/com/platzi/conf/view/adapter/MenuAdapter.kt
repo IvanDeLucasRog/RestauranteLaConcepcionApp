@@ -10,10 +10,7 @@ import com.platzi.conf.PlateClickedSingleton
 import com.platzi.conf.model.Menu
 import com.platzi.conf.R
 import com.platzi.conf.network.FirestoreService
-import com.platzi.conf.viewmodel.PlateViewModel
 import com.squareup.picasso.Picasso
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MenuAdapter(val menuListener: MenuListener?) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {

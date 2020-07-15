@@ -16,14 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.platzi.conf.R
 import com.platzi.conf.model.Menu
 import com.platzi.conf.model.Plates
-import com.platzi.conf.view.adapter.MenuAdapter
 import com.platzi.conf.view.adapter.MenuDialogAdapter
-import com.platzi.conf.viewmodel.MenuViewModel
 import com.platzi.conf.viewmodel.PlateViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_menu.*
 import kotlinx.android.synthetic.main.fragment_menu_detail_dialog.*
-import java.text.SimpleDateFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -49,7 +45,7 @@ class MenuDetailDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbarConference.navigationIcon = ContextCompat.getDrawable(view.context, R.drawable.ic_close)
-        toolbarConference.setTitleTextColor(Color.WHITE)
+        toolbarConference.setTitleTextColor(Color.BLACK)
         toolbarConference.setNavigationOnClickListener {
             dismiss()
         }

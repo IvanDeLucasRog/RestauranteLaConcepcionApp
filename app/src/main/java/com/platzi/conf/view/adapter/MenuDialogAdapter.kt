@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.platzi.conf.R
-import com.platzi.conf.model.Menu
 import com.platzi.conf.model.Plates
 
 class MenuDialogAdapter : RecyclerView.Adapter<MenuDialogAdapter.ViewHolder>() {

@@ -3,7 +3,6 @@ package com.platzi.conf.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.platzi.conf.model.Menu
 import com.platzi.conf.model.Plates
 import com.platzi.conf.network.Callback
 import com.platzi.conf.network.FirestoreService
