@@ -25,8 +25,8 @@ class MenuAdapter(val menuListener: MenuListener) : RecyclerView.Adapter<MenuAda
         val menu = listMenu[position] as Menu //situarnos en el item que estemos
 
         holder.tvItemMenuPlatesName.text = menu.title
-            holder.tvItemMenuTag.text = menu.tag
-            Picasso.get().load(menu.imageUrl).into(holder.ivItemMenuIcon)
+        holder.tvItemMenuTag.text = menu.tag
+        Picasso.get().load(menu.imageUrl).into(holder.ivItemMenuIcon)
 
         holder.itemView.setOnClickListener {
             menuListener.onMenuClicked(menu, position)
