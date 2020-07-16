@@ -9,6 +9,7 @@
 
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Light.Dialog">
@@ -20,6 +21,11 @@
         <item name="android:windowBackground">#FFF</item>
         <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
         <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+    <style name="tv_reservation_subtitle" parent="AppTheme">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/paddingLeftReservation</item>
     </style>
 
 </resources>

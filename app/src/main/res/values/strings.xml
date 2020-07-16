@@ -18,5 +18,32 @@
         \u0009 &#8226; Fecha: Sábado 3 de Agosto de 2019.\n
         \u0009 &#8226; Lugar: Centro Cultural Roberto Cantoral.\n
         \u0009 &#8226; Dirección: Puente Xoco s/n, Xoco, 03330 Ciudad de México, CDMX.</string>
+    <string name="reserva">Reserva</string>
+    <string name="description_reservation">Gracias por elegir reservar una mesa en nuestro restaurante. Elija la fecha y la hora a la que desea la reserva y rellene el formulario con sus datos. Si tiene cualquier pregunta, no dude en llamarnos al 921 46 09 30 o enviarnos un email a laconcepcion@restaurantelaconcepcion.com</string>
+    <string name="reservation_one">Número de personas para reservar mesa</string>
+    <string name="fecha_reserva">Fecha de la reserva</string>
+    <string-array name="personsNumber_array">
+        <item>1 persona</item>
+        <item>2 personas</item>
+        <item>3 personas</item>
+        <item>4 personas</item>
+        <item>5 personas</item>
+        <item>6 personas</item>
+        <item>7 personas</item>
+        <item>8 personas</item>
+        <item>9 personas</item>
+        <item>10 personas</item>
+        <item>11 personas</item>
+        <item>12 personas</item>
+        <item>13 personas</item>
+        <item>14 personas</item>
+        <item>15 personas</item>
+        <item>16 personas</item>
+        <item>17 personas</item>
+        <item>18 personas</item>
+        <item>19 personas</item>
+        <item>20+ personas</item>
+
+    </string-array>
 
 </resources>

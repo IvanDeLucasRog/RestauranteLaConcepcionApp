@@ -12,4 +12,6 @@
     <dimen name="itemScheduleTitulo">45sp</dimen>
     <dimen name="itemMenuTitulomargin">3dp</dimen>
     <dimen name="itemMenuHeight">80dp</dimen>
+    <dimen name="ivReservationSubtitle">35dp</dimen>
+    <dimen name="paddingLeftReservation">5dp</dimen>
 </resources>
