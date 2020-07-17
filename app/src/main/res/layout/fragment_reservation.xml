@@ -35,14 +35,14 @@
                 android:text="@string/description_reservation"
                  />
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="@dimen/ivReservationSubtitle"
                     android:layout_weight="1">
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/one"
                         android:paddingLeft="@dimen/paddingLeftReservation"/>
@@ -53,7 +53,7 @@
                     android:layout_weight="7"
                     android:layout_gravity="center_vertical">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
 
                         android:layout_height="wrap_content"
                         style="@style/tv_reservation_subtitle"
@@ -63,31 +63,37 @@
 
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/personsNumberSpinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/et_reservationPeople"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/et_reservation"
+                android:inputType="number"
+                android:hint="@string/et_hint_peopleNumber"/>
+
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="@dimen/ivReservationSubtitle"
                     android:layout_weight="1">
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/two"
-                        android:paddingStart="10dp"/>
+                        android:paddingStart="5dp"
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="7"
                     android:layout_gravity="center_vertical">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
 
                         android:layout_height="wrap_content"
                         style="@style/tv_reservation_subtitle"
@@ -110,7 +116,8 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="date"
-                        android:layout_marginLeft="15dp" />
+                        android:hint="@string/dd_mm_aaaa"
+                        style="@style/et_reservation" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -130,14 +137,22 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4">
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/et_reservationTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="time"
-                        android:layout_marginLeft="15dp" />
+                    android:id="@+id/et_reservationTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="time"
+                    style="@style/et_reservation"
+                    android:hint="@string/hh_min"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -148,10 +163,91 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_time"
-                        android:layout_marginLeft="15dp"/>
+                        android:layout_marginStart="15dp"/>
                 </LinearLayout>
             </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/ivReservationSubtitle"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/three"
+                    android:paddingStart="5dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_width="match_parent"
 
+                    android:layout_height="wrap_content"
+                    style="@style/tv_reservation_subtitle"
+                    android:text="@string/detalles_y_peticiones"
+                    android:paddingLeft="8dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_reservationPeticion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/et_reservation"
+                    android:hint="@string/peticiones"
+                    android:lines="3"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_reservationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/et_reservation"
+                    android:hint="@string/et_hint_reservationName"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_reservationPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/et_reservation"
+                    android:inputType="phone"
+                    android:hint="@string/et_reservation_telefono"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_reservationEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/et_reservation"
+                    android:hint="Email *"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_reservationSend"
+                android:layout_gravity="center_horizontal"
+                style="@style/btn_reservation"
+                />
 
 
         </LinearLayout>

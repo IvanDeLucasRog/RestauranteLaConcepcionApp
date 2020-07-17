@@ -8,9 +8,10 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import com.platzi.conf.R
+import com.platzi.conf.view.ui.fragments.MenuFragment
 import com.platzi.conf.view.ui.fragments.ReservationFragment
 
-class PeopleNumberSpinnerAdapter {
+/*class PeopleNumberSpinnerAdapter {
 
     var spinner : Spinner? = null
 
@@ -66,3 +67,4 @@ class PeopleNumberSpinnerAdapter {
     }
 
 
+*/

@@ -12,14 +12,14 @@ import android.widget.Toast
 
 
 import com.platzi.conf.R
-import com.platzi.conf.view.adapter.PeopleNumberSpinnerAdapter
+
 
 /**
  * A simple [Fragment] subclass.
  */
 class ReservationFragment : Fragment(){
 
-    private  val peopleNumberSpinnerAdapter = PeopleNumberSpinnerAdapter ()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +29,7 @@ class ReservationFragment : Fragment(){
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        peopleNumberSpinnerAdapter.setUpSpinner(view.context)
+        //peopleNumberSpinnerAdapter.setUpSpinner(view.context) Instancia para poder llamar al spinner si lo implementamos algún día
 
     }
 

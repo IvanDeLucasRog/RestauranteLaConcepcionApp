@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">PlatziConf</string>
+    <string name="app_name">Restaurante La Concepción</string>
 
-    <string name="inicio_frag_tv_que_es">¿Qué es PlatziConf?</string>
     <string name="inicio_frag_tv_que_es_resp">Este restaurante conocido como “LA CONCHA”, ocupa un enclave privilegiado bajo los soportales de la Plaza Mayor.
 \n
 \nEn su animada terraza, junto a la Catedral, se puede desayunar o tomar el aperitivo disfrutando del sol, incluso en los meses de invierno, y en las noches de verano es cita obligada para tomar una copa o un cocktail.
@@ -11,7 +10,6 @@
     <string name="inicio_frag_tv_por_que_resp">En nuestra cafetería se puede disfrutar de un tranquilo café o un animado vermú.
         \n
         \nNuestra barra, siempre tiene los aperitivos más variados elaborados con productos de primera calidad.</string>
-    <string name="inicio_frag_tv_info">Información de la PlatziConf México 2019</string>
     <string name="inicio_frag_tv_info_resp">
         \u0009 &#8226; Es un evento exclusivo para estudiantes con suscripción activa en Platzi.\n
         \u0009 &#8226; (Sí esto te apasiona y no tienes una suscripción activa, adquiere ya mismo tu Plan Expert).\n
@@ -22,6 +20,14 @@
     <string name="description_reservation">Gracias por elegir reservar una mesa en nuestro restaurante. Elija la fecha y la hora a la que desea la reserva y rellene el formulario con sus datos. Si tiene cualquier pregunta, no dude en llamarnos al 921 46 09 30 o enviarnos un email a laconcepcion@restaurantelaconcepcion.com</string>
     <string name="reservation_one">Número de personas para reservar mesa</string>
     <string name="fecha_reserva">Fecha de la reserva</string>
+    <string name="et_hint_peopleNumber">Para +20 personas contacte por vía telefónica</string>
+    <string name="dd_mm_aaaa">dd/mm/AAAA</string>
+    <string name="hh_min">hh:min</string>
+    <string name="detalles_y_peticiones">Detalles y peticiones</string>
+    <string name="peticiones">Peticiones</string>
+    <string name="et_hint_reservationName">Nombre *</string>
+    <string name="et_reservation_telefono">Teléfono *</string>
+    <string name="btn_reservationSend">Enviar</string>
     <string-array name="personsNumber_array">
         <item>1 persona</item>
         <item>2 personas</item>
