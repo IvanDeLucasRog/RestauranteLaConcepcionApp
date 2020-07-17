@@ -12,7 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.annotation.IntegerRes
 import androidx.annotation.RequiresApi
+import com.google.android.material.snackbar.Snackbar
 
 
 import com.platzi.conf.R
@@ -51,6 +53,14 @@ class ReservationFragment : Fragment(){
         ib_reservationDate.setOnClickListener {
             setDatePicker()
         }
+        btn_reservation.setOnClickListener {
+
+            if (phoneNumberOk() && emailOk() &&nameOk() && dateOk() && timeOk()){
+                Toast.makeText(view?.context, "Email enviado correctamente", Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(view?.context, "Faltan campos", Toast.LENGTH_LONG).show()
+            }
+        }
 
 
     }
@@ -70,9 +80,89 @@ class ReservationFragment : Fragment(){
         val month = cal.get(Calendar.MONTH)
         val day = cal.get(Calendar.DAY_OF_MONTH)
         val datePickerDialog = DatePickerDialog(requireView().context, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDayOfMonth ->
-            et_reservationDate.setText("$mDayOfMonth/$mMonth/$mYear")
+            if (mYear>=year && mMonth>=month && mDayOfMonth>=day){
+                et_reservationDate.setText("$mDayOfMonth/$mMonth/$mYear")
+            }else{
+                Toast.makeText(view.context, "Seleccione una fecha válida", Toast.LENGTH_LONG).show()
+            }
         }, year, month, day)
         datePickerDialog.show()
+    }
+    fun peopleNumberOk(): Boolean {
+        var correct : Boolean
+        if (et_reservationPeople.toString().isEmpty()){
+            correct = false
+            Toast.makeText(view?.context, "Inserte el número de personas", Toast.LENGTH_LONG).show()
+        }else{
+            val peopleNumber = et_reservationPeople.toString().toInt()
+             if (peopleNumber<20) {
+                 correct = true
+             } else {
+                 correct = false
+                 Toast.makeText(view?.context, "Para reservas de más de 20 personas contacte directamente con el restaurante", Toast.LENGTH_LONG).show()
+             }
+        }
+        return correct
+    }
+    fun phoneNumberOk(): Boolean{
+        var correct : Boolean
+        if (et_reservationPhone.toString().isEmpty()){
+            correct = false
+            Toast.makeText(view?.context, "Inserte el número de teléfono", Toast.LENGTH_LONG).show()
+        }else{
+            if (et_reservationPhone.length() >=9) {
+                correct = true
+            } else {
+                correct = false
+                Toast.makeText(view?.context, "Inserte un número de teléfono válido", Toast.LENGTH_LONG).show()
+            }
+        }
+        return correct
+    }
+    fun emailOk(): Boolean{
+        var correct : Boolean
+        if (et_reservationEmail.toString().isEmpty()){
+            correct = false
+            Toast.makeText(view?.context, "Inserte el Email", Toast.LENGTH_LONG).show()
+        }else{
+            if (et_reservationEmail.toString().contains("@")) {
+                correct = true
+            } else {
+                correct = false
+                Toast.makeText(view?.context, "Inserte un número de eMail válido", Toast.LENGTH_LONG).show()
+            }
+        }
+        return correct
+    }
+    fun nameOk(): Boolean{
+        var correct : Boolean
+        if (et_reservationName.toString().isEmpty()) {
+            correct = false
+            Toast.makeText(view?.context, "Inserte nombre y apellidos para reservar", Toast.LENGTH_LONG).show()
+        }else{
+            correct = true
+        }
+        return correct
+    }
+    fun dateOk(): Boolean{
+        var correct : Boolean
+        if (et_reservationDate.toString().isEmpty()) {
+            correct = false
+            Toast.makeText(view?.context, "Inserte una fecha para reservar", Toast.LENGTH_LONG).show()
+        }else{
+            correct = true
+        }
+        return correct
+    }
+    fun timeOk(): Boolean{
+        var correct : Boolean
+        if (et_reservationTime.toString().isEmpty()) {
+            correct = false
+            Toast.makeText(view?.context, "Inserte una hora para reservar", Toast.LENGTH_LONG).show()
+        }else{
+            correct = true
+        }
+        return correct
     }
 
 

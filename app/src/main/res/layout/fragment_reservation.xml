@@ -54,7 +54,6 @@
                     android:layout_gravity="center_vertical">
                     <TextView
                         android:layout_width="match_parent"
-android:id="@+id/pito"
                         android:layout_height="wrap_content"
                         style="@style/tv_reservation_subtitle"
                         android:text="@string/reservation_one"
@@ -232,7 +231,7 @@ android:id="@+id/pito"
                     style="@style/et_reservation"
                     android:inputType="phone"
                     android:hint="@string/et_reservation_telefono"
-                    android:maxLength="9"/>
+                    />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

@@ -25,7 +25,7 @@
     <string name="hh_min">hh:min</string>
     <string name="detalles_y_peticiones">Detalles y peticiones</string>
     <string name="peticiones">Peticiones</string>
-    <string name="et_hint_reservationName">Nombre *</string>
+    <string name="et_hint_reservationName">Nombre y apellidos*</string>
     <string name="et_reservation_telefono">Teléfono *</string>
     <string name="btn_reservationSend">Enviar</string>
     <string-array name="personsNumber_array">
