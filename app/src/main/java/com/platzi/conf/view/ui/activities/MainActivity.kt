@@ -2,8 +2,12 @@ package com.platzi.conf.view.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.platzi.conf.R
@@ -16,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setActionBar(findViewById(R.id.toolbarMain))//asignamos la toolbar ya que quitamos la default
         configNav()
+
 
 
 //Region Subir datos Firebase

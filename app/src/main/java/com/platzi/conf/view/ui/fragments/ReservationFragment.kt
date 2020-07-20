@@ -6,11 +6,13 @@ import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.IntegerRes
 import androidx.annotation.RequiresApi
@@ -18,6 +20,7 @@ import com.google.android.material.snackbar.Snackbar
 
 
 import com.platzi.conf.R
+import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.fragment_reservation.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -93,11 +96,23 @@ class ReservationFragment : Fragment() {
                 if (mYear >= year && mMonth >= month && mDayOfMonth >= day) {
                     et_reservationDate.setText("$mDayOfMonth/$mMonth/$mYear")
                 } else {
-                    Toast.makeText(view.context, "Seleccione una fecha válida", Toast.LENGTH_LONG)
-                        .show()
+                    showToast("Seleccione una fecha válida")
                 }
             }, year, month, day)
         datePickerDialog.show()
+    }
+    fun showToast(textOutput: String){
+        val inflater = layoutInflater
+        var container: ViewGroup? = custom_toast_container
+        val layout = inflater.inflate(R.layout.custom_toast, container) as ViewGroup
+        val text: TextView = layout.findViewById(R.id.toastText)
+        text.text = textOutput
+        with (Toast(view?.context)) {
+            setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+            duration = Toast.LENGTH_LONG
+            view = layout
+            show()
+        }
     }
     /*fun peopleNumberOk(): Boolean {
         var correct : Boolean
