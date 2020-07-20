@@ -9,7 +9,8 @@
         <Toolbar
             android:id="@+id/toolbarUbication"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"/>
     </com.google.android.material.appbar.AppBarLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -24,16 +25,17 @@
                 android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="match_parent"
+                    android:id="@+id/iv_UbicationDetail"
+                    android:layout_width="match_parent"
                         android:layout_height="230dp"
-                        android:src="@drawable/platzi_conf_2"
+                        android:src="@drawable/nuestra_barra"
                         android:scaleType="centerCrop"/>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="4dp"
-                    app:cardElevation="1dp"
+                    app:cardElevation="4dp"
                     android:layout_margin="15dp">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -43,8 +45,8 @@
                             android:id="@+id/tvDetailNombreLugar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lugar PlatziConf"
-                            android:textSize="30sp"
+                            android:text="Restaurante La Concepción"
+                            android:textSize="25sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary"
                             android:gravity="center_horizontal"

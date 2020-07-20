@@ -9,3 +9,4 @@ class Menu :Serializable { // para que el objeto pueda pasar entre activities
     lateinit var imageUrl: String
     lateinit var imageDetail: String
 }
+

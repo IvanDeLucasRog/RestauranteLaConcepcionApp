@@ -14,6 +14,8 @@ import androidx.fragment.app.DialogFragment
 
 import com.platzi.conf.R
 import com.platzi.conf.model.Ubication
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_menu_detail_dialog.*
 import kotlinx.android.synthetic.main.fragment_ubication_detail_dialog.*
 
 /**
@@ -36,7 +38,7 @@ class UbicationDetailDialogFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         toolbarUbication.navigationIcon =
             ContextCompat.getDrawable(view.context, R.drawable.ic_close)
-        toolbarUbication.setTitleTextColor(Color.WHITE)
+        toolbarUbication.setTitleTextColor(Color.BLACK)
         toolbarUbication.setNavigationOnClickListener {
             dismiss()
         }
@@ -48,6 +50,7 @@ class UbicationDetailDialogFragment : DialogFragment() {
         tvUbicationDirection.text = ubication.address
         tvUbicationTel.text = ubication.phone
         tvUbicationUrl.text = ubication.website
+        Picasso.get().load(ubication.photo).into(iv_UbicationDetail)
 
         llTelUbication.setOnClickListener{
             val intent = Intent(Intent.ACTION_DIAL).apply {

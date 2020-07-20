@@ -26,7 +26,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class ReservationFragment : Fragment(){
+class ReservationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,17 +35,18 @@ class ReservationFragment : Fragment(){
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_reservation, container, false)
     }
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //peopleNumberSpinnerAdapter.setUpSpinner(view.context) Instancia para poder llamar al spinner si lo implementamos algún día
-        var et_reservationPeopleText = et_reservationPeople.text
+        /*var et_reservationPeopleText = et_reservationPeople.text
         var et_reservationDateText = et_reservationDate.text
         var et_reservationTimeText = et_reservationTime.text
         var et_reservationPeticion = et_reservationPeticion.text
         var et_reservationNameText = et_reservationName.text
         var et_reservationPhoneText = et_reservationPhone.text
-        var et_resrationEmailText = et_reservationEmail.text
+        var et_resrationEmailText = et_reservationEmail.text*/
 
         ib_reservationTime.setOnClickListener {
             setTimePicker()
@@ -53,42 +54,52 @@ class ReservationFragment : Fragment(){
         ib_reservationDate.setOnClickListener {
             setDatePicker()
         }
-        btn_reservation.setOnClickListener {
+        /*btn_reservation.setOnClickListener {
 
-            if (phoneNumberOk() && emailOk() &&nameOk() && dateOk() && timeOk()){
-                Toast.makeText(view?.context, "Email enviado correctamente", Toast.LENGTH_LONG).show()
+            if (phoneNumberOk() && emailOk(et_reservationEmail.editableText.toString()) /*&& nameOk() && dateOk() && timeOk()*/){
+                Toast.makeText(view.context, "Email enviado correctamente", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(view?.context, "Faltan campos", Toast.LENGTH_LONG).show()
+                Toast.makeText(view.context, "Faltan campos", Toast.LENGTH_LONG).show()
             }
-        }
-
+        }*/
 
     }
-    fun setTimePicker(){
+
+    fun setTimePicker() {
         val cal = Calendar.getInstance()
         val timeSetListener = TimePickerDialog.OnTimeSetListener { timepicker, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
             et_reservationTime.setText(SimpleDateFormat("HH:mm").format(cal.time))
         }
-        TimePickerDialog(view?.context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        TimePickerDialog(
+            view?.context,
+            timeSetListener,
+            cal.get(Calendar.HOUR_OF_DAY),
+            cal.get(Calendar.MINUTE),
+            true
+        ).show()
     }
+
     @RequiresApi(Build.VERSION_CODES.N)
-    fun setDatePicker(){
+    fun setDatePicker() {
         val cal = Calendar.getInstance()
         val year = cal.get(Calendar.YEAR)
         val month = cal.get(Calendar.MONTH)
         val day = cal.get(Calendar.DAY_OF_MONTH)
-        val datePickerDialog = DatePickerDialog(requireView().context, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDayOfMonth ->
-            if (mYear>=year && mMonth>=month && mDayOfMonth>=day){
-                et_reservationDate.setText("$mDayOfMonth/$mMonth/$mYear")
-            }else{
-                Toast.makeText(view.context, "Seleccione una fecha válida", Toast.LENGTH_LONG).show()
-            }
-        }, year, month, day)
+        val datePickerDialog = DatePickerDialog(
+            requireView().context,
+            DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDayOfMonth ->
+                if (mYear >= year && mMonth >= month && mDayOfMonth >= day) {
+                    et_reservationDate.setText("$mDayOfMonth/$mMonth/$mYear")
+                } else {
+                    Toast.makeText(view.context, "Seleccione una fecha válida", Toast.LENGTH_LONG)
+                        .show()
+                }
+            }, year, month, day)
         datePickerDialog.show()
     }
-    fun peopleNumberOk(): Boolean {
+    /*fun peopleNumberOk(): Boolean {
         var correct : Boolean
         if (et_reservationPeople.toString().isEmpty()){
             correct = false
@@ -106,37 +117,22 @@ class ReservationFragment : Fragment(){
     }
     fun phoneNumberOk(): Boolean{
         var correct : Boolean
-        if (et_reservationPhone.toString().isEmpty()){
-            correct = false
-            Toast.makeText(view?.context, "Inserte el número de teléfono", Toast.LENGTH_LONG).show()
-        }else{
             if (et_reservationPhone.length() >=9) {
                 correct = true
             } else {
                 correct = false
                 Toast.makeText(view?.context, "Inserte un número de teléfono válido", Toast.LENGTH_LONG).show()
             }
-        }
         return correct
     }
-    fun emailOk(): Boolean{
+    fun emailOk(email: String): Boolean{
         var correct : Boolean
-        if (et_reservationEmail.toString().isEmpty()){
-            correct = false
-            Toast.makeText(view?.context, "Inserte el Email", Toast.LENGTH_LONG).show()
-        }else{
-            if (et_reservationEmail.toString().contains("@")) {
-                correct = true
-            } else {
-                correct = false
-                Toast.makeText(view?.context, "Inserte un número de eMail válido", Toast.LENGTH_LONG).show()
-            }
-        }
-        return correct
+            if (email == android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) return false
+        return
     }
     fun nameOk(): Boolean{
         var correct : Boolean
-        if (et_reservationName.toString().isEmpty()) {
+        if (et_reservationName.text != null) {
             correct = false
             Toast.makeText(view?.context, "Inserte nombre y apellidos para reservar", Toast.LENGTH_LONG).show()
         }else{
@@ -163,8 +159,7 @@ class ReservationFragment : Fragment(){
             correct = true
         }
         return correct
-    }
-
+    }*/
 
 
 }
