@@ -22,9 +22,9 @@ class SnoozeReceiver : BroadcastReceiver() {
             NotificationManager::class.java
         ) as NotificationManager
 
-        val nextNotificationTime = 20 * 1000
+        /*val nextNotificationTime = 20 * 1000
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + nextNotificationTime, snoozePendingIntent)
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + nextNotificationTime, snoozePendingIntent)*/
 
         notificationManager.sendNotification(context.getString(R.string.snooze_notification), context)
     }
