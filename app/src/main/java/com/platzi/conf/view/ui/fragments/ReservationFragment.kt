@@ -1,9 +1,10 @@
 package com.platzi.conf.view.ui.fragments
 
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+import android.app.*
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -16,10 +17,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.IntegerRes
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import com.google.android.material.snackbar.Snackbar
 
 
 import com.platzi.conf.R
+import com.platzi.conf.receiver.SnoozeReceiver
+import com.platzi.conf.utils.cancelNotifications
+import com.platzi.conf.utils.sendNotification
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.fragment_reservation.*
 import java.text.SimpleDateFormat
@@ -30,6 +36,8 @@ import java.util.*
  * A simple [Fragment] subclass.
  */
 class ReservationFragment : Fragment() {
+
+    lateinit var alarmManager: AlarmManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,20 +59,21 @@ class ReservationFragment : Fragment() {
         var et_reservationPhoneText = et_reservationPhone.text
         var et_resrationEmailText = et_reservationEmail.text*/
 
+        createChannel(getString(R.string.notification_channel_id), getString(R.string.notification_channel_name))
         ib_reservationTime.setOnClickListener {
             setTimePicker()
         }
         ib_reservationDate.setOnClickListener {
             setDatePicker()
         }
-        /*btn_reservation.setOnClickListener {
-
-            if (phoneNumberOk() && emailOk(et_reservationEmail.editableText.toString()) /*&& nameOk() && dateOk() && timeOk()*/){
+        btn_reservation.setOnClickListener {
+            setNotifications(requireContext())
+            /*if (phoneNumberOk() && emailOk(et_reservationEmail.editableText.toString()) /*&& nameOk() && dateOk() && timeOk()*/){
                 Toast.makeText(view.context, "Email enviado correctamente", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(view.context, "Faltan campos", Toast.LENGTH_LONG).show()
-            }
-        }*/
+            }*/
+        }
 
     }
 
@@ -175,6 +184,37 @@ class ReservationFragment : Fragment() {
         }
         return correct
     }*/
+    fun setNotifications(context: Context){
+        val notificationManager =
+            ContextCompat.getSystemService(
+                requireView().context,
+                NotificationManager::class.java
+            ) as NotificationManager
+        notificationManager.sendNotification(requireContext().getString(R.string.reservation_soon), requireContext())
+        setAlarm(context)
+
+        //notificationManager.cancelNotifications()
+
+    }
+    fun setAlarm (context: Context){
+        alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val second = 20 * 1000
+        val intent = Intent(context, SnoozeReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + second, pendingIntent)
+    }
+    private fun createChannel(channelId: String, channelName: String){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val notificationChannel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_LOW)
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.RED
+            notificationChannel.enableVibration(true)
+            notificationChannel.description = requireContext().getString(R.string.reservation_soon)
+
+            val notificationManager = requireActivity().getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
 
 
 }

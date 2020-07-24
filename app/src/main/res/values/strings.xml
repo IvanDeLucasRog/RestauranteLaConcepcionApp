@@ -51,5 +51,11 @@
         <item>20+ personas</item>
 
     </string-array>
+    <string name="notification_channel_id" translatable="false">restaurant_channel</string>
+    <string name="notification_channel_name" translatable="true">Restaurant</string>
+    <string name="notification_title" translatable="true">Restaurante La Concepción</string>
+    <string name="reservation_soon">Recuerde acudir a su reserva en una hora!</string>
+    <string name="snooze">Recordar más tarde</string>
+    <string name="snooze_notification">Aún queda menos para su reserva!</string>
 
 </resources>

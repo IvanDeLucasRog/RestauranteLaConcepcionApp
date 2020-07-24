@@ -16,7 +16,6 @@ import kotlin.collections.ArrayList
 class MenuAdapter(val menuListener: MenuListener?) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 
     var listMenu = ArrayList<Menu>() //donde se van a almacenar gráficamente los elementos
-    var firestoreService = FirestoreService()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_menu, parent, false))
