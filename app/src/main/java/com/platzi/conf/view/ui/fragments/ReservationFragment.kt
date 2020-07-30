@@ -32,12 +32,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-/**
- * A simple [Fragment] subclass.
- */
 class ReservationFragment : Fragment() {
 
-    lateinit var alarmManager: AlarmManager
+    //lateinit var alarmManager: AlarmManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,6 +108,7 @@ class ReservationFragment : Fragment() {
         datePickerDialog.show()
     }
     fun showToast(textOutput: String){
+        //Custom Toast
         val inflater = layoutInflater
         var container: ViewGroup? = custom_toast_container
         val layout = inflater.inflate(R.layout.custom_toast, container) as ViewGroup
@@ -191,18 +189,18 @@ class ReservationFragment : Fragment() {
                 NotificationManager::class.java
             ) as NotificationManager
         notificationManager.sendNotification(requireContext().getString(R.string.reservation_soon), requireContext())
-        setAlarm(context)
+        //setAlarm(context)
 
         //notificationManager.cancelNotifications()
 
     }
-    fun setAlarm (context: Context){
+    /*fun setAlarm (context: Context){
         alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val second = 20 * 1000
         val intent = Intent(context, SnoozeReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + second, pendingIntent)
-    }
+    }*/
     private fun createChannel(channelId: String, channelName: String){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val notificationChannel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_LOW)

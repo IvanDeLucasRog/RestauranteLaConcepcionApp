@@ -18,7 +18,12 @@ private val FLAGS = 0
 
 fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context) {
     val contentIntent = Intent(applicationContext, MainActivity::class.java)
-    val contentPendingIntent = PendingIntent.getActivity(applicationContext, NOTIFICATION_ID, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+    val contentPendingIntent = PendingIntent.getActivity(
+        applicationContext,
+        NOTIFICATION_ID,
+        contentIntent,
+        PendingIntent.FLAG_UPDATE_CURRENT
+    )
     val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
     val snoozePendingIntent: PendingIntent = PendingIntent.getBroadcast(
         applicationContext,
@@ -27,7 +32,8 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         PendingIntent.FLAG_ONE_SHOT
     )
 
-    val notificationImage = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.nuestra_terraza)
+    val notificationImage =
+        BitmapFactory.decodeResource(applicationContext.resources, R.drawable.nuestra_terraza)
     val bigPicStyle = NotificationCompat.BigPictureStyle()
         .bigPicture(notificationImage)
         .bigLargeIcon(null)
@@ -43,7 +49,11 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setAutoCancel(true) //para que cuando cliquemos desaparezca la notificación
         .setStyle(bigPicStyle)
         .setLargeIcon(notificationImage)
-        .addAction(R.drawable.logo_suelto, applicationContext.getString(R.string.snooze),snoozePendingIntent)
+        .addAction(
+            R.drawable.logo_suelto,
+            applicationContext.getString(R.string.snooze),
+            snoozePendingIntent
+        )
         .setPriority(NotificationCompat.PRIORITY_LOW)
 
 
@@ -51,7 +61,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
 
 }
 
-fun NotificationManager.cancelNotifications(){
+fun NotificationManager.cancelNotifications() {
     cancelAll()
 
 }
